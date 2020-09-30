@@ -1,0 +1,6 @@
+{
+	// 插件配置数组
+	"plugins": ["transform-runtime"],
+	// 语法配置数组
+	"presets": ["@babel/env", "stage-0"]
+}
