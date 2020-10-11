@@ -1,5 +1,5 @@
 <template>
-	<div class="frame">
+    <div class="frame">
         <header class="header">
             <h1 class="sign">欢迎使用图书管理系统</h1>
             <div class="user">123</div>
@@ -8,7 +8,7 @@
             <router-view></router-view>
         </div>
         <aside class="aside-nav">
-            <a href="">首页</a>
+            <router-link to="/home">首页</router-link>
             <router-link to="/books">图书管理</router-link>
             <router-link to="/readers">读者管理</router-link>
             <router-link to="/borrow">借阅管理</router-link>
@@ -18,7 +18,11 @@
 </template>
 
 <script>
+    export default {
+        
+    }
 </script>
 
-<style>
+<style scoped>
+    
 </style>
