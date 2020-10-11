@@ -22,7 +22,7 @@
 .aside-nav {
     float: left;
     width: 13%;
-    height: 88%;
+    height: 89%;
     border-right: 1px solid #555;
     background-color: #fff;
 }
@@ -46,5 +46,5 @@
 .content {
     float: right;
     width: 86.9%;
-    height: 88%;
+    height: 89%;
 }
