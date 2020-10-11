@@ -3,9 +3,9 @@ const htmlWebpackPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
-	entry: path.join(__dirname, './src/js/index.js'),
+	entry: path.join(__dirname, './src/js/main.js'),
 	output: {
-		path: path.join(__dirname, './dist/js'),
+		path: path.join(__dirname, './dist'),
 		filename: 'bundle.js'
     },
     plugins: [
@@ -29,11 +29,11 @@ module.exports = {
                 ]
             },
             // 处理 js 语法
-            // {
-            //     test: /\.js$/,
-            //     use: 'babel-loader',
-            //     exclude: /node_modules/
-            // },
+            {
+                test: /\.js$/,
+                use: 'babel-loader',
+                exclude: /node_modules/
+            },
             // 处理 vue 模板
             {
                 test: /\.vue$/,
