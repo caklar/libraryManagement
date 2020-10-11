@@ -1,28 +1,41 @@
 <template>
 	<div class="borrow">
         <div class="borrow-control">
-            <a href="">图书借阅</a>
-            <a href="">图书归还</a>
-            <a href="">借阅记录</a>
-            <a href="">逾期记录</a>
+            <router-link to="/borrow/bookBorrow" @click.native="BR = true">图书借阅</router-link>
+            <router-link to="/borrow/bookReturn" @click.native="BR = false">图书归还</router-link>
+            <router-link to="/borrow" @click.native="getBorrowMsg">借阅记录</router-link>
+            <router-link to="/borrow/expireMsg" @click.native="getExpireMsg">逾期记录</router-link>
         </div>
-        <div class="borrow-msg">
-            <table>
-                <thead>
-                    <tr>
-                        <td>图书编号</td>
-                        <td>图书名称</td>
-                        <td>借阅人</td>
-                        <td>联系方式</td>
-                        <td>借阅状态</td>
-                    </tr>
-                </thead>
-            </table>
-        </div>
+        <router-view :borrowMsg="borrowMsg" :BR="BR"></router-view>
     </div>
 </template>
 
 <script>
+    import axios from 'axios'
+
+    export default {
+        mounted () {
+            this.getBorrowMsg()
+        },
+        data () {
+            return {
+                borrowMsg: [],
+                BR: true
+            }
+        },
+        methods: {
+            getBorrowMsg () {
+                axios.get('/borrow').then(res =>
+                    this.borrowMsg = res.data
+                )
+            },
+            getExpireMsg () {
+                axios.get('/expire').then(res =>
+                    this.borrowMsg = res.data
+                )
+            }
+        }
+    }
 </script>
 
 <style>
