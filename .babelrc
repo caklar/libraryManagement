@@ -1,6 +1,6 @@
 {
 	// 插件配置数组
-	"plugins": ["transform-runtime"],
+	"plugins": ["@babel/plugin-transform-runtime","@babel/plugin-proposal-class-properties"],
 	// 语法配置数组
-	"presets": ["@babel/env", "stage-0"]
+	"presets": ["@babel/preset-env"]
 }
