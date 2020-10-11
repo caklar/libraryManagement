@@ -13,6 +13,7 @@ body {
     line-height: 2;
     color: #000;
     background: #fff;
+    overflow: hidden;
 }
 
 a {
@@ -24,7 +25,6 @@ input, textarea {
     font-family: "Microsoft YaHei", sans-serif;
     outline:none;
     box-shadow:none;
-    appearance:none;
 }
 
 table {
@@ -34,12 +34,27 @@ table {
 td {
     height: 35px;
     padding: 0 10px;
+    border:1px solid #e3e3e3;
     font-size: 16px;
     text-align: center;
 }
 
 thead td {
     height: 35px;
-    border:1px solid #e3e3e3;
     background: #f1f1f1;
+}
+
+form {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.msgInput {
+    width: 350px;
+    height: 24px;
+    margin: 5px 0 20px;
+    padding: 5px 15px;
+    border: 1px solid #555;
+    line-height: 24px;
+    font-size: 14px;
 }
